@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Hello.</h1>
-    <h2>My Name is Travis Weber</h2>
+    <h2>My name is Travis Weber</h2>
     <TravisBio/>
   </div>
 </template>
@@ -21,9 +21,10 @@ export default class Home extends Vue {}
 <style scoped>
 
 .home {
-  margin-top: 10%;
-  margin-left: 14%;
+  margin-top: 6%;
+  margin-left: 10%;
   text-align: left;
 }
+
 
 </style>

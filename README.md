@@ -1,21 +1,7 @@
-# Travis.gg
+# Travis.gg v2
 
-Second Version of my personal website
+Second Version of my personal website.
 
-## Project setup
-
-```bash
-yarn install
-```
-
-### Compiles and hot-reloads for development
-
-```bash
-yarn serve
-```
-
-### Compiles and minifies for production
-
-```bash
-yarn build
-```
+Shoutout to Evan You, this website is heavily inspired by his personal page,
+<https://evanyou.me/>. I intend on changing things up, but I started with his site
+as a temple on which to build.
