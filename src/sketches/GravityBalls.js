@@ -30,7 +30,9 @@ export function main(_p5) {
       if (mouseIsOnCanvas()) {
         balls[i].runFromMouse();
       }
-      balls[i].attractTo(middle, 100);
+      if (balls[i].distanceFrom(middle) > 4) {
+        balls[i].attractTo(middle, 100);
+      }
       balls[i].move();
     }
   }
@@ -125,5 +127,9 @@ class ball {
       force.mult(this.forceCap/force.mag());
     }
     this.velocity.add(force);
+  }
+
+  distanceFrom(otherPos) {
+    return vectorSubtract(this.pos, otherPos).mag();
   }
 }
