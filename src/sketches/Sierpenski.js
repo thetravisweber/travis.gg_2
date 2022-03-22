@@ -6,14 +6,12 @@ let speed = 1;
 export function main(_p5) {
   p5 = _p5;
 
-  // NOTE: Set up is here   
   p5.setup = _ => {      
     let cnv = p5.createCanvas(600, 500); 
     cnv.style("position: absolute; right: 0; bottom: 0; z-index: -10;");
     cnv.parent("p5Canvas");
   }
 
-  // NOTE: Draw is here
   p5.draw = _ => {      
     p5.background(220);
     p5.noFill();

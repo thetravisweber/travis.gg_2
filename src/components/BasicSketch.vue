@@ -7,7 +7,7 @@
 <script>
 export default {
   mounted() {   
-    var radar = require('@/sketches/Sierpenski.js')
+    var radar = require('@/sketches/GravityBalls.js')
     const P5 = require('p5')
     new P5(radar.main)
   }
