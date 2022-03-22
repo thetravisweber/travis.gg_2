@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Hello. My name is Travis Weber.</h1>
+    <h1>Hello, my name is Travis Weber.</h1>
     <TravisBio/>
     <BasicSketch id="math-animation"/>
   </div>

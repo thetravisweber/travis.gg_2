@@ -2,14 +2,12 @@
   <div class="travisbio">
     <p>I am an American software Engineer currently pursuing a degree in
        Mathematics from Northern Arizona University. You can checkout my 
-       <a href="https://github.com/thetravisweber">github</a>. I don't have much
-        to show for myself yet, but I intend on starting a data science company 
-        after obtaining my Bachelor's of Science in Mathematics.
+       <a href="https://github.com/thetravisweber">github</a>.
       </p>
     <p>
-      Besides writing code, doing math, and reading, I enjoy hiking, mountain 
-      biking, fishing, and offroading. I currently live in Flagstaff, AZ, which 
-      I highly recommend to outdoorsy people.
+      I enjoy coding, math, reading, hiking, mountain biking, and fishing. 
+      I currently live in Flagstaff, AZ, which I highly recommend to outdoorsy
+      people.
     </p>
   </div>
 </template>
