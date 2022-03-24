@@ -33,7 +33,7 @@ export default {
 .socials {
   display: flex;
   justify-content: space-between;
-  margin: auto;
+  max-width: 500px;
   width: 100%;
 }
 
