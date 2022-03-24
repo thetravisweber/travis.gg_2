@@ -19,10 +19,11 @@ export function main(_p5) {
     cnv.style("position: absolute; right: 0; bottom: 0; z-index: -10;");
     cnv.parent("p5Canvas");
     desired = p5.createVector(p5.width - 300, p5.height - 300);
+    const wiggleRoom = GOAL_DIST / 3;
     for (let i = 0; i < 30; i++) {
       balls[i] = new ball(
-        desired.x + p5.random(-20, 20),
-        desired.y + p5.random(-20, 20)
+        desired.x + p5.random(-wiggleRoom, wiggleRoom),
+        desired.y + p5.random(-wiggleRoom, wiggleRoom)
       );
     }
     p5.noStroke();
