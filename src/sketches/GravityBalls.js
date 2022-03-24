@@ -1,21 +1,25 @@
 let balls = [];
 
-let middle;
+let desired;
 let p5;
+const GOAL_DIST = 150;
+
+let forceScale = .01;
+const JIT = .02; 
 
 export function main(_p5) {
   p5 = _p5;
   console.log(p5);
   
   p5.setup = _ => {
-    let cnv = p5.createCanvas(600, 600);
+    let cnv = p5.createCanvas(p5.windowWidth, p5.windowHeight);
     cnv.style("position: absolute; right: 0; bottom: 0; z-index: -10;");
     cnv.parent("p5Canvas");
-    middle = p5.createVector(p5.width/2, p5.height/2);
-    for (let i = 0; i < 50; i++) {
+    desired = p5.createVector(p5.width - 300, p5.height - 300);
+    for (let i = 0; i < 30; i++) {
       balls[i] = new ball(
-        middle.x + p5.random(-20, 20),
-        middle.y + p5.random(-20, 20)
+        desired.x + p5.random(-20, 20),
+        desired.y + p5.random(-20, 20)
       );
     }
     p5.noStroke();
@@ -30,18 +34,24 @@ export function main(_p5) {
       if (mouseIsOnCanvas()) {
         balls[i].runFromMouse();
       }
-      if (balls[i].distanceFrom(middle) > 4) {
-        balls[i].attractTo(middle, 100);
+      if (balls[i].distanceFrom(desired) > 20) {
+        balls[i].attractTo(desired, 40);
       }
       balls[i].move();
     }
+  }
+
+  p5.mousePressed = _ => {
+    balls.forEach( b => {
+      b.spin();
+    });
   }
 }
 
 function randomMovement() {
   return p5.createVector(
-    p5.random(-1, 1),
-    p5.random(-1, 1)
+    p5.random(-JIT, JIT),
+    p5.random(-JIT, JIT)
   );
 }
 
@@ -57,16 +67,27 @@ function vectorSubtract(start, end) {
   );
 }
 
+function dot(v1, v2) {
+  return (v1.x * v2.x) + (v1.y * v2.y);
+}
+
+function angleBetween(v1, v2) {
+  const num = dot(v1, v2);
+  const den = v1.mag() * v2.mag();
+  return p5.acos(num / den);
+}
+
 class ball {
   pos;
   size;
   velocity;
   forceCap = 10;
+  attractCutoff
 
   constructor(x, y) {
     this.pos = p5.createVector(x, y);
     this.velocity = p5.createVector(0,0);
-    this.size = p5.random(10, 40);
+    this.size = p5.random(20, 35);
   }
 
   draw() {
@@ -80,14 +101,14 @@ class ball {
   }
 
   applyFriction() {
-    this.velocity.mult(.1);
+    this.velocity.mult(.99);
   }
 
   interactWithOtherBalls(others, selfId) {
     others.forEach((other, index) => {
       if (index == selfId) return;
       let distance = vectorSubtract(this.pos, other.pos);
-      if (distance.mag() < p5.width/3) {
+      if (distance.mag() < GOAL_DIST) {
         this.repelFrom(other.pos, other.size);
       } else {
         this.attractTo(other.pos, other.size);
@@ -99,7 +120,7 @@ class ball {
     let mouseVector = p5.createVector(p5.mouseX, p5.mouseY);
     let vectorToMouse = vectorSubtract(this.pos, mouseVector);
     if (vectorToMouse.mag() < this.size * 3) {
-      this.repelFrom(mouseVector, 10**20 / vectorToMouse.mag());
+      this.repelFrom(mouseVector, 10**10 / vectorToMouse.mag());
     }
   }
 
@@ -117,7 +138,7 @@ class ball {
   calculateForceToObject(objectPosition, strength) {
     let difference = vectorSubtract(this.pos, objectPosition);
     let denom = difference.mag()**2
-    let scale = -.1 * (this.size*strength) / denom;
+    let scale = -forceScale * (this.size*strength) / denom;
     difference.mult(scale);
     return difference;
   }
