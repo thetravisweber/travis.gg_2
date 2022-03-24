@@ -1,7 +1,7 @@
 <template>
   <div class="home">
-    <h1>Hello, my name is Travis Weber.</h1>
-    <TravisBio id="bio"/>
+    <h1 class="about">Hello, my name is Travis Weber.</h1>
+    <TravisBio id="bio" class="about"/>
     <BasicSketch id="math-animation"/>
   </div>
 </template>
@@ -37,6 +37,20 @@ h1 {
 #bio {
   width: 50%;
   min-width: 10em;
+}
+
+@media only screen and (max-width: 1026px) {
+  #math-animation {
+      display: none;
+  }
+
+  #bio {
+    width: 70%
+  }
+
+  h1 {
+    width: 70%
+  }
 }
 
 </style>
