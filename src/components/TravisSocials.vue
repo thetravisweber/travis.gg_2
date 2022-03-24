@@ -32,6 +32,7 @@ export default {
 <style scoped>
 .socials {
   display: flex;
+  justify-content: space-between;
   margin: auto;
   width: 100%;
 }
