@@ -1,8 +1,8 @@
 <template>
   <div class="socials">
     <social-link
-      iconLink="https://img.icons8.com/material/48/000000/twitter--v1.png"
-      link="https://twitter.com/travis_weber_"
+      iconLink="https://img.icons8.com/ios-glyphs/48/000000/github.png"
+      link="https://github.com/thetravisweber"
     />
     <social-link
       iconLink="https://img.icons8.com/ios-filled/48/000000/instagram-new.png"
@@ -13,8 +13,8 @@
       link="https://www.youtube.com/channel/UCJECUUnURjLq6QuetU5Mn1A"
     />
     <social-link
-      iconLink="https://img.icons8.com/ios-glyphs/48/000000/github.png"
-      link="https://github.com/thetravisweber"
+      iconLink="https://img.icons8.com/material/48/000000/twitter--v1.png"
+      link="https://twitter.com/travis_weber_"
     />
   </div>
 </template>
