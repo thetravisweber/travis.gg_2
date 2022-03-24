@@ -9,7 +9,10 @@ const JIT = .02;
 
 export function main(_p5) {
   p5 = _p5;
-  console.log(p5);
+  console.log(
+    "Snooping through code are ya? Its easier on github: ", 
+    "https://github.com/thetravisweber/travis.gg_2"
+  );
   
   p5.setup = _ => {
     let cnv = p5.createCanvas(p5.windowWidth, p5.windowHeight);
@@ -39,12 +42,6 @@ export function main(_p5) {
       }
       balls[i].move();
     }
-  }
-
-  p5.mousePressed = _ => {
-    balls.forEach( b => {
-      b.spin();
-    });
   }
 }
 
