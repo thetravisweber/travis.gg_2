@@ -44,6 +44,11 @@ export function main(_p5) {
       balls[i].move();
     }
   }
+
+  p5.mousePressed = _ => {
+    const wiggleRoom = GOAL_DIST / 3;
+    balls.push(new ball(p5.mouseX, p5.mouseY));
+  }
 }
 
 function randomMovement() {

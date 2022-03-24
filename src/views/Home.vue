@@ -28,6 +28,12 @@ export default class Home extends Vue {}
   text-align: left;
 }
 
+h1 {
+  width: 50%;
+  background: rgba(255, 255, 255, .5);
+  box-shadow: rgb(255 255 255 / 50%) 0 0 20px 20px;
+}
+
 #bio {
   width: 50%;
   min-width: 10em;
