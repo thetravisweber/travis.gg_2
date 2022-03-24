@@ -92,39 +92,12 @@ class ball {
 
   draw() {
     p5.ellipse(this.pos.x, this.pos.y, this.size, this.size);
-    this.drawSpin();
   }
 
   move() {
     this.applyForce(randomMovement());
     this.applyFriction();
     if (this.velocity.mag() > .1) this.pos.add(this.velocity);
-  }
-
-  spin() {
-    const angleFromCenter = angleBetween(
-      vectorSubtract(this.pos, desired),
-      p5.createVector(0, 1)
-    );
-    // 90 degree turn
-    const orth = angleFromCenter + (p5.PI / 2);
-    console.log(orth);
-    let spinVec = p5.createVector(p5.cos(orth), p5.sin(orth));
-    spinVec.mult(this.size)
-    console.log(spinVec);
-    this.velocity.add(spinVec);
-  }
-
-  drawSpin() {
-    const angleFromCenter = angleBetween(
-      vectorSubtract(this.pos, desired),
-      p5.createVector(0, 1)
-    );
-    // 90 degree turn
-    const orth = angleFromCenter + (p5.PI / 2);
-    let spinVec = p5.createVector(p5.cos(orth), p5.sin(orth));
-    spinVec.mult(30);
-    p5.line(this.pos.x, this.pos.y, this.pos.x + spinVec.x, this.pos.y + spinVec.y);
   }
 
   applyFriction() {
@@ -147,7 +120,7 @@ class ball {
     let mouseVector = p5.createVector(p5.mouseX, p5.mouseY);
     let vectorToMouse = vectorSubtract(this.pos, mouseVector);
     if (vectorToMouse.mag() < this.size * 3) {
-      this.repelFrom(mouseVector, 10**20 / vectorToMouse.mag());
+      this.repelFrom(mouseVector, 10**10 / vectorToMouse.mag());
     }
   }
 
