@@ -1,7 +1,7 @@
 <template>
   <div class="soc">
     <a :href="link">
-      <img class="social-icon" :src="iconLink" height="50" />
+      <img class="social-icon" :src="iconLink" width="64"/>
     </a>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
 .soc {
   padding: 20px;
   font-size: 30px;
-  width: 33%;
+  width: 64px;
   align-content: center;
 }
 
@@ -34,5 +34,13 @@ a:hover {
 
 .soc:hover {
   opacity: 0.7;
+}
+
+@media only screen and (max-width: 620px) {
+  .soc {
+    padding: 0px;
+    padding-top: 20%;
+    margin: auto;
+  }
 }
 </style>

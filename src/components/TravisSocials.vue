@@ -35,4 +35,13 @@ export default {
   margin: auto;
   width: 100%;
 }
+
+@media only screen and (max-width: 620px) {
+  .socials {
+    display: block;
+    width: 100%;
+    margin: auto;
+  }
+}
+
 </style>

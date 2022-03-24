@@ -56,13 +56,19 @@ h1 {
   }
 }
 
-@media only screen and (max-width: 600px) {
-  h1 {
+@media only screen and (max-width: 620px) {
+  #bio {
     display: none;
   }
 
-  #bio {
-    display: none;
+  .home {
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+  }
+
+  #about {
+    width: 100%;
   }
 }
 
