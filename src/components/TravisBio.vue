@@ -19,6 +19,8 @@
   font-weight: 300;
   line-height: 1.4;
   max-width: 24em;
+  background: rgba(255, 255, 255, .5);
+  box-shadow: rgb(255 255 255 / 50%) 0 0 20px 20px;
 }
 
 </style>
