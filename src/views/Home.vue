@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Hello, my name is Travis Weber.</h1>
-    <TravisBio/>
+    <TravisBio id="bio"/>
     <BasicSketch id="math-animation"/>
   </div>
 </template>
@@ -26,6 +26,11 @@ export default class Home extends Vue {}
   margin-top: 10%;
   margin-left: 10%;
   text-align: left;
+}
+
+#bio {
+  width: 50%;
+  min-width: 10em;
 }
 
 </style>
