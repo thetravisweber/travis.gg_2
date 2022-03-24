@@ -1,7 +1,10 @@
 <template>
   <div class="home">
-    <h1 class="about">Hello, my name is Travis Weber.</h1>
-    <TravisBio id="bio" class="about"/>
+    <div id="about">
+      <h1>Hello, my name is Travis Weber.</h1>
+      <TravisBio id="bio" />
+      <TravisSocials id="social-media-links"/>
+    </div>
     <BasicSketch id="math-animation"/>
   </div>
 </template>
@@ -10,11 +13,13 @@
 import { Options, Vue } from 'vue-class-component';
 import TravisBio from '@/components/TravisBio.vue'; // @ is an alias to /src
 import BasicSketch from '@/components/BasicSketch.vue';
+import TravisSocials from '@/components/TravisSocials.vue';
 
 @Options({
   components: {
     TravisBio,
-    BasicSketch
+    BasicSketch,
+    TravisSocials
   },
 })
 export default class Home extends Vue {}
@@ -29,14 +34,16 @@ export default class Home extends Vue {}
 }
 
 h1 {
-  width: 50%;
   background: rgba(255, 255, 255, .5);
   box-shadow: rgb(255 255 255 / 50%) 0 0 20px 20px;
 }
 
 #bio {
-  width: 50%;
   min-width: 10em;
+}
+
+#about {
+  width: 50%;
 }
 
 @media only screen and (max-width: 1026px) {
@@ -44,12 +51,18 @@ h1 {
       display: none;
   }
 
-  #bio {
-    width: 70%
+  #about {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    display: none;
   }
 
-  h1 {
-    width: 70%
+  #bio {
+    display: none;
   }
 }
 
