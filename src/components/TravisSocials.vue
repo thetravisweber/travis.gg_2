@@ -11,14 +11,14 @@
       description="My Twitter"
     />
     <social-link
-      iconLink="https://img.icons8.com/ios-filled/48/000000/instagram-new.png"
-      link="https://www.instagram.com/travis__weber/"
-      description="My Instagram"
-    />
-    <social-link
       iconLink="https://img.icons8.com/ios-filled/50/000000/email-sign.png"
       link="mailto: tjw328@nau.edu"
       description="My Email, send me a message!"
+    />
+    <social-link
+      iconLink="https://img.icons8.com/ios-filled/48/000000/instagram-new.png"
+      link="https://www.instagram.com/travis__weber/"
+      description="My Instagram"
     />
   </div>
 </template>
