@@ -1,7 +1,11 @@
 <template>
   <div class="soc">
     <a :href="link">
-      <img class="social-icon" :src="iconLink" width="64"/>
+      <img 
+        class="social-icon"
+        :src="iconLink" 
+        :title="description"
+        width="64"/>
     </a>
   </div>
 </template>
@@ -11,6 +15,7 @@ export default {
   props: {
     link: String,
     iconLink: String,
+    description: String,
   },
 };
 </script>
