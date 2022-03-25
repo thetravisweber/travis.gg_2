@@ -57,10 +57,6 @@ h1 {
 }
 
 @media only screen and (max-width: 620px) {
-  #bio {
-    display: none;
-  }
-
   .home {
     width: 80%;
     margin: auto;
