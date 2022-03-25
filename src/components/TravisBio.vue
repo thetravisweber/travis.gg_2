@@ -1,7 +1,7 @@
 <template>
   <div class="travisbio">
-    <p>I am an American software Engineer currently pursuing a degree in
-       Mathematics from Northern Arizona University.
+    <p>I am an American software engineer currently pursuing a bachelor's degree
+       in Mathematics at Northern Arizona University.
       </p>
     <p>
       I enjoy coding, math, reading, mountain biking, and fishing. 
